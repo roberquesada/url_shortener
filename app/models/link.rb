@@ -23,4 +23,13 @@ class Link < ActiveRecord::Base
       true
     end    
   end
+
+  def self.exist_url_shortened(url)
+    link = find_by(original_url: url)
+    if link.blank?
+      generate_short_link
+    else
+      link.short_url
+    end
+  end
 end
