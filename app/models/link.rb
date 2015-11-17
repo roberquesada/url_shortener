@@ -12,7 +12,7 @@ class Link < ActiveRecord::Base
     3.times do |letter|
       short_url += letters[rand(0..50)]
     end
-    
+
     short_url
   end
 
@@ -31,5 +31,10 @@ class Link < ActiveRecord::Base
     else
       link.short_url
     end
+  end
+
+  def update_visited
+    current_visited = visited
+    update(visited: (current_visited + 1))
   end
 end

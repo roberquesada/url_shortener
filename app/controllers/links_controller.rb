@@ -5,8 +5,11 @@ class LinksController < ApplicationController
     if url.blank?
       render(:text => 'Short url not found')
     else
+      url.update_visited
       redirect_to(url.original_url)
     end
 
   end
+
+
 end
