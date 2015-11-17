@@ -1,0 +1,7 @@
+<h1>Pages</h1>
+
+<ul>
+  <% @urls.each do |url| %>
+    <li><%= url.original_url %> - <%= url.short_url %></li>
+  <% end %>
+</ul>

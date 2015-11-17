@@ -1,0 +1,7 @@
+<h1>Most visited pages</h1>
+
+<ul>
+  <% @pages.each do |page| %>
+    <li><%= page.original_url %> - <%= page.visited %> times visited</li>
+  <% end %>
+</ul>

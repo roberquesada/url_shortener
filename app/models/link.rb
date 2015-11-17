@@ -37,4 +37,8 @@ class Link < ActiveRecord::Base
     current_visited = visited
     update(visited: (current_visited + 1))
   end
+
+  def self.list_most_visited(number_items)
+    order('visited DESC').limit(number_items)
+  end
 end

@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+(1..50).each do |link|
+  short_url_random = Link.generate_short_link
+  Link.create(
+    original_url: 'http://www.google.com',
+    short_url: short_url_random,
+    visited: rand(1..50),
+  )
+end
