@@ -12,7 +12,7 @@ class Link < ActiveRecord::Base
     3.times do |letter|
       short_url += letters[rand(0..50)]
     end
-
+    
     short_url
   end
 
