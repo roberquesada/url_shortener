@@ -15,4 +15,12 @@ class Link < ActiveRecord::Base
 
     short_url
   end
+
+  def self.check_protocol(url)
+    if url.match(/^(https?:\/\/)/) == nil
+      false
+    else
+      true
+    end    
+  end
 end
